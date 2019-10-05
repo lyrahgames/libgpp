@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libgpp/
+}
+
+export $out_root/libgpp/$import.target

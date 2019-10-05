@@ -1,0 +1,20 @@
+lib{gpp}: {hxx cxx}{** -version} hxx{version}
+{
+  cxx.export.poptions =+ "-I$out_root" "-I$src_root"
+}
+
+obja{*}: cxx.poptions += -DLIBGPP_STATIC_BUILD
+objs{*}: cxx.poptions += -DLIBGPP_SHARED_BUILD
+liba{gpp}: cxx.export.poptions += -DLIBGPP_STATIC
+libs{gpp}: cxx.export.poptions += -DLIBGPP_SHARED
+
+hxx{version}: in{version} $src_root/manifest
+{
+  dist = true
+  clean = ($src_root != $out_root)
+}
+
+if $version.pre_release
+  lib{gpp}: bin.lib.version = @"-$version.project_id"
+else
+  lib{gpp}: bin.lib.version = @"-$version.major.$version.minor"

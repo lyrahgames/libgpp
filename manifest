@@ -1,0 +1,4 @@
+: 1
+name: libgpp
+version: 0.1.0
+summary: gnuplot pipeline library

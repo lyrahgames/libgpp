@@ -1,0 +1,6 @@
+import libs = libgpp%lib{gpp}
+
+exe{main}: {hxx cxx}{**} $libs
+{
+  test = true
+}
