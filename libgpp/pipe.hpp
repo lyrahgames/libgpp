@@ -1,6 +1,9 @@
 #pragma once
 #include <cstdio>
+#include <iostream>
 #include <stdexcept>
+
+#include <libhello/hello.hxx>
 
 namespace gpp {
 
@@ -9,6 +12,7 @@ class pipe {
   static constexpr char gnuplot_cmd[] = "gnuplot -persist";
 
   pipe() {
+    hello::say_hello(std::cout, "Gnuplot Pipeline");
     if (!(pipe_ = popen(gnuplot_cmd, "w")))
       throw std::runtime_error("Could not open Gnuplot pipeline!");
   }

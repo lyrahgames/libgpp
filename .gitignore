@@ -10,6 +10,7 @@
 !root.build
 !export.build
 !manifest
+!repositories.manifest
 
 !*.md
 !.gitignore

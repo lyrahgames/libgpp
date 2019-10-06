@@ -1,8 +1,9 @@
 : 1
 name: libgpp
-version: 0.1.0
+version: 0.1.0-a.0.z
 summary: gnuplot pipeline library
 license: MIT
 description-file: README.md
 url: https://github.com/lyrahgames/libgpp
 email: markuspawellek@gmail.com
+depends: libhello ^1.0.0

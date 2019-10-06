@@ -1,6 +1,9 @@
-lib{gpp}: {hxx cxx}{** -version} hxx{version}
+import int_libs = libhello%lib{hello}
+
+lib{gpp}: {hxx cxx}{** -version} hxx{version} $int_libs
 {
   cxx.export.poptions =+ "-I$out_root" "-I$src_root"
+  cxx.export.libs =+ $int_libs
 }
 
 obja{*}: cxx.poptions += -DLIBGPP_STATIC_BUILD
