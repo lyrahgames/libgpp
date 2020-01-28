@@ -1,4 +1,4 @@
-import int_libs = libhello%lib{hello}
+import int_libs =
 
 lib{gpp}: {hxx cxx}{** -version} hxx{version} $int_libs
 {
